@@ -5,7 +5,7 @@ import scala.annotation.tailrec
  * @author Rhett.wang
  * @date 2020/8/30 19:18
  */
-object BinaryTree {
+object BinarySearch {
   def main(args: Array[String]): Unit = {
     var result =binarySearch1(List(1,22,13,4,5,6,7,8).sorted,4)
      println(result)
