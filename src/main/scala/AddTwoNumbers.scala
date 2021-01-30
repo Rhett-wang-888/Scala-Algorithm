@@ -18,7 +18,7 @@ object AddTwoNumbers {
         val r=(l1.x+l2.x)%10
         val ln=new ListNode(r)
         val next=if(d>0)
-            addTwoNumbersa(new ListNode(1),addTwoNumbersa(l1.next,l2.next)
+            addTwoNumbersa(new ListNode(1),addTwoNumbersa(l1.next,l2.next))
             else
             addTwoNumbersa(l1.next,l2.next)
         ln.next=next
