@@ -35,5 +35,23 @@ object TwoSum {
     val map=nums.zipWithIndex
     map.filter(elem=>map.exists(kv=>kv._1==target-elem._1&&kv._2!=elem._2)).map(_._2)
   }
+  //2个链表相加 超出10则进一位
+  def twoSum4(l1:ListNode,l2:ListNode):ListNode=(l1,l2) match{
+    case (l1,null)=>l1
+    case (null,l2)=>l2
+    case (_,_)=>
+      val d=(l1.x+l2.x)/10
+      val r=(l1.x+l2.x)%10
+      val ln=new ListNode(r)
+
+      val next=if(d>0)
+              twoSum4(new ListNode(1),twoSum4(l1.next,l2.next))
+               else
+              twoSum4(l1.next,l2.next)
+      ln.next=next
+      ln
+
+  }
+
 
 }
