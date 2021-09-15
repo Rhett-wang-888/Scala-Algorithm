@@ -50,7 +50,6 @@ object TwoSum {
               twoSum4(l1.next,l2.next)
       ln.next=next
       ln
-
   }
 
 
