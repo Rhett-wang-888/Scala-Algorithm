@@ -52,4 +52,28 @@ object RemoveNthFromEnd {
     beforeHead.next
   }
 
+  def removeNthFromEnd2(head:ListNode,n:Int):ListNode={
+    val beforeHead=new ListNode()
+    beforeHead.next=head
+    val stack=scala.collection.mutable.Stack[ListNode]()
+    stack.push(beforeHead)
+
+    var idx=head
+    while (idx !=null){
+      stack.push(idx)
+      idx=idx.next
+    }
+
+    var count=n
+    while(count>=2){
+      stack.pop()
+      count -=1
+    }
+    if(stack.length==1)return null
+    val removed=stack.pop()
+    val beforeRemoved=stack.top
+    beforeRemoved.next=removed.next
+
+    beforeHead.next
+  }
 }
