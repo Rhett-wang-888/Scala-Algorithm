@@ -1,3 +1,5 @@
+import javax.management.ListenerNotFoundException
+
 /**
  * @author Rhett
  * @title: RemoveNthFromEnd
@@ -75,5 +77,22 @@ object RemoveNthFromEnd {
     beforeRemoved.next=removed.next
 
     beforeHead.next
+  }
+  def removeNthFromEnd3(head:ListNode,n:Int):ListNode={
+    val dummy=new ListNode(0)
+    dummy.next=head
+    var first=dummy
+    var second=dummy
+
+    for(i<-1 to n+1){
+      first=first.next
+    }
+    while(first !=null){
+      first=first.next
+      second=second.next
+    }
+    second.next=second.next.next
+
+    dummy.next
   }
 }
