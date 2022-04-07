@@ -39,5 +39,11 @@ object GuiBing {
     }
     return dummyHead.next
   }
+  def sortList1(head:ListNode):ListNode={
+
+
+    return null
+
+  }
 
 }
