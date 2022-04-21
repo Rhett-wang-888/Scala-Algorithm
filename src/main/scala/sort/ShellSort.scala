@@ -38,6 +38,7 @@ object ShellSort {
 
   }
 
+
   def shellSort1(arr:Array[Int]):Array[Int]={
 
     var step=arr.length/2
